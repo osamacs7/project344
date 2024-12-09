@@ -1,21 +1,3 @@
-To create a **GitHub repository** with a detailed **README.md** explaining the entire setup process, follow these steps:
-
----
-
-# **Step 1: Create a GitHub Repository**
-1. Go to [GitHub](https://github.com/).
-2. Click **New Repository**.
-3. Name the repository something like `SSH-Honeypot-Setup`.
-4. Add a description: "Automated SSH Honeypot with Fail2Ban, Cowrie, and Email Alerts."
-5. Check **Add a README file**.
-6. Click **Create Repository**.
-
----
-
-# **Step 2: Create the README.md File**
-Here’s the content for your `README.md` file based on our setup:
-
----
 
 # **SSH Honeypot Setup (Cowrie + Fail2Ban + Email Alerts)**
 
@@ -211,27 +193,3 @@ sudo systemctl restart ssh
 
 ---
 
-# **Contributing**
-Feel free to create issues or submit pull requests.
-
----
-
-# **License**
-This project is licensed under the MIT License.
-
----
-
-# **Step 3: Upload to GitHub**
-1. **Initialize Git in Your Local Directory**:
-   ```bash
-   git init
-   git add README.md
-   git commit -m "Initial commit: SSH Honeypot Setup"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/SSH-Honeypot-Setup.git
-   git push -u origin main
-   ```
-
----
-
-Let me know if you’d like additional sections or customizations for the **GitHub README.md**! 🚀
