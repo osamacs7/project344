@@ -9,7 +9,6 @@ This guide walks through setting up an **SSH Honeypot** using **Cowrie**, **Fail
 - SSH Honeypot (Cowrie)
 - Automatic IP Banning (Fail2Ban)
 - SSH Redirection to Honeypot
-- Email Alerts on Attacks
 - Custom Credentials and IP Whitelisting
 
 ---
@@ -84,12 +83,6 @@ sudo nano /etc/fail2ban/jail.local
 
 Add this to `jail.local`:
 ```ini
-[DEFAULT]
-destemail = your_email@example.com
-sender = fail2ban@example.com
-mta = sendmail
-action = iptables-redirect-email
-
 [sshd]
 enabled = true
 port = ssh
@@ -189,7 +182,5 @@ sudo systemctl restart ssh
 ### **11. Test the Setup**
 1. Attempt several incorrect SSH logins from another machine.
 2. Check logs to see if IPs are banned and redirected to the Cowrie honeypot.
-3. Verify email notifications.
-
 ---
 
