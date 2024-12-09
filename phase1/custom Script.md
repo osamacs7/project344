@@ -144,5 +144,3 @@ Brute force attack completed. Valid credentials found:
 This project is licensed under the **MIT License**. See the `LICENSE` file for details.
 
 ---
-
-Let me know if you'd like additional sections or custom configurations! 🚀
