@@ -1,0 +1,10 @@
+# Clone Cowrie from GitHub into the current directory
+sudo git clone https://github.com/cowrie/cowrie.git
+# Create a virtual environment named 'cowrie-env'
+sudo python3 -m venv cowrie-env
+# Activate the virtual environment
+source cowrie-env/bin/activate
+# Install all required dependencies listed in 'requirements.txt'
+pip install -r requirements.txt
+#start cowrie
+bin/cowrie start
