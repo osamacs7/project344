@@ -1,4 +1,3 @@
-  GNU nano 8.2                                                                                                   finalversion.py *                                                                                                          
 def start_honeypot(host='0.0.0.0', port=2222):
     try:
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
