@@ -21,5 +21,10 @@ This repository documents the **custom implementation of an SSH Honeypot** using
 The entire project involved creating a **custom SSH Honeypot environment** with advanced features. Since **Cowrie** is a widely-used, highly configurable SSH honeypot, we decided to share **only its installation and configuration steps**. This allows users who **don't have Cowrie installed** to set it up easily and integrate it into their own custom implementations.
 
 
+Alternative: Use the Custom SSH Python File
+If you prefer a simpler approach or wish to avoid installing Cowrie, you can:
+
+Run the Custom SSH Python File included in the repository.
+Set Up Fail2Ban using the provided configuration files.
 
 ---
