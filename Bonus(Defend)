@@ -1,0 +1,179 @@
+
+
+---
+
+## **1. Install Required Packages**
+```bash
+# Update package list
+sudo apt update  
+
+# Install necessary packages (Fail2Ban, Cowrie, and email tools)
+sudo apt install fail2ban git python3-venv python3-pip python3-dev sendmail -y
+```
+
+---
+
+## **2. Install and Configure Cowrie SSH Honeypot**
+```bash
+# Clone Cowrie from GitHub
+cd /opt
+sudo git clone https://github.com/cowrie/cowrie.git
+cd cowrie
+
+# Set up Cowrie environment
+python3 -m venv cowrie-env
+source cowrie-env/bin/activate
+pip install -r requirements.txt
+
+# Create Cowrie configuration file
+cp etc/cowrie.cfg.dist etc/cowrie.cfg
+```
+
+---
+
+## **3. Configure Cowrie Credentials**
+```bash
+# Open Cowrie user credentials file
+sudo nano /opt/cowrie/etc/userdb.txt
+
+# Example: Add users with passwords
+# Format: username:password:UID
+root:toor:1000
+admin:admin123:1001
+guest:guestpass:1002
+```
+
+---
+
+## **4. Configure Cowrie Main Settings (Optional)**
+```bash
+# Open Cowrie main configuration file
+sudo nano /opt/cowrie/etc/cowrie.cfg
+
+# Example Configurations:
+# Allow any password login
+auth_none_enabled = true
+
+# Only allow specific usernames
+authorized_users = root, admin, guest
+```
+
+---
+
+## **5. Start Cowrie Service**
+```bash
+# Start Cowrie honeypot
+bin/cowrie start
+
+# Check Cowrie logs for activity
+sudo tail -f /opt/cowrie/var/log/cowrie/cowrie.log
+```
+
+---
+
+## **6. Install and Configure Fail2Ban**
+```bash
+# Install Fail2Ban
+sudo apt install fail2ban -y
+
+# Open Fail2Ban configuration file
+sudo nano /etc/fail2ban/jail.local
+
+# Add Fail2Ban SSH Jail Configuration
+[DEFAULT]
+destemail = your_email@example.com
+sender = fail2ban@example.com
+mta = sendmail
+action = iptables-redirect-email
+
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 600
+findtime = 600
+```
+
+---
+
+## **7. Create Custom iptables-redirect Action**
+```bash
+# Create custom iptables-redirect-email action
+sudo nano /etc/fail2ban/action.d/iptables-redirect-email.conf
+
+# Add the following action configuration
+[Definition]
+actionstart = iptables -N f2b-<name>
+actionstop = iptables -D INPUT -j f2b-<name>
+
+actionban = iptables -t nat -A PREROUTING -s <ip> -p tcp --dport 22 -j REDIRECT --to-port 2222
+             sendmail -t <<EOF
+To: <destemail>
+From: <sender>
+Subject: [Fail2Ban] SSH Attack Detected from <ip>
+
+SSH attack detected from <ip>.
+Host: <host>
+Date: <date>
+EOF
+
+actionunban = iptables -t nat -D PREROUTING -s <ip> -p tcp --dport 22 -j REDIRECT --to-port 2222
+```
+
+---
+
+## **8. Manage Fail2Ban Service**
+```bash
+# Restart Fail2Ban service
+sudo systemctl restart fail2ban
+
+# Check Fail2Ban service status
+sudo systemctl status fail2ban
+
+# Check Fail2Ban logs for banned IPs
+sudo tail -f /var/log/fail2ban.log
+```
+
+---
+
+## **9. Verify iptables Rules**
+```bash
+# List current iptables NAT rules
+sudo iptables -t nat -L --line-numbers
+```
+
+---
+
+## **10. Test and Unban IPs in Fail2Ban**
+```bash
+# List all active Fail2Ban jails
+sudo fail2ban-client status
+
+# Check banned IPs for a specific jail
+sudo fail2ban-client status sshd
+
+# Unban a specific IP address
+sudo fail2ban-client set sshd unbanip <IP_ADDRESS>
+
+# Unban all banned IPs (optional)
+sudo fail2ban-client unban --all
+```
+
+---
+
+## **11. Configure SSH Service (Fix IPv4 Binding Issue)**
+```bash
+# Edit SSH server configuration
+sudo nano /etc/ssh/sshd_config
+
+# Ensure the following lines are correctly configured:
+AddressFamily any            # Listen on IPv4 and IPv6
+ListenAddress 0.0.0.0        # Bind to all available interfaces
+
+# Restart the SSH service
+sudo systemctl restart ssh
+
+# Check if SSH is listening on IPv4 and IPv6
+sudo ss -tlnp | grep ssh
