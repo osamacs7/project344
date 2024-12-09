@@ -56,7 +56,7 @@ pip3 install paramiko
 
 ### **3. Clone the Repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/custom-ssh-honeypot.git
+git clone https://github.com/osamacs7/custom-ssh-honeypot.git
 cd custom-ssh-honeypot
 ```
 
