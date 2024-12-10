@@ -1,5 +1,5 @@
 
-# **SSH Honeypot Setup (Cowrie + Fail2Ban + Email Alerts)**
+# **SSH Honeypot Setup (Cowrie + Fail2Ban)**
 
 This guide walks through setting up an **SSH Honeypot** using **Cowrie**, **Fail2Ban**, and **Email Alerts** with full IP banning and redirection capabilities.
 
