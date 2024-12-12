@@ -1,31 +1,61 @@
-# ICS 344 Project
-### made by Waleed A. Al-Gobi, Ph.D Students
+# ICS 344: Information Security - Course Project
 
-Welcome to **Project 344**! 🚀 This repository is dedicated to [brief project description]. The goal of this project is to [state the main objective or purpose of the project].
+**Project Title:** Offensive Security, Cyber Deception, and SIEM  
+**Course Instructors:** ICS 344 Faculty (Semester 241)
+** Made by Waleed A. Al-Gobi, Ph.D Students
 
-## Table of Contents
+---
 
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Project Overview
 
-## About the Project
+This project provides a hands-on approach to learning key aspects of **offensive security**, **cyber deception**, and **Security Information and Event Management (SIEM)**. Students will:
 
-**Project 344** aims to [provide more details about what the project does, its purpose, or problem it solves]. Whether you're a beginner or an advanced user, this project is designed to be user-friendly and accessible.
+1. Configure and compromise a vulnerable service.
+2. Deploy and test honeypots to evaluate realism and behavior.
+3. Use SIEM platforms to analyze and visualize security data.
+4. Optionally, propose defensive strategies.
 
-## Features
+---
+## Project Phases
 
-- [Feature 1]: [Short description of the feature]
-- [Feature 2]: [Short description of the feature]
-- [Feature 3]: [Short description of the feature]
+### **Phase 1: Setup and Compromise**
+- **Goal:** Configure a vulnerable service and use offensive tools to compromise it.
+- **Tools & Frameworks:** 
+  - MITRE Caldera
+  - Kali Linux (e.g., Metasploit)
+  - Custom scripts guided by MITRE ATT&CK TTPs
+- **Deadline:** November 5, 2024
 
-## Getting Started
+### **Phase 2: Honeypot Setup and Evaluation**
+- **Goal:** Deploy a honeypot that mimics the compromised service and compare its behavior.
+- **Evaluation Metrics:** Realism, attack time, and resource usage.
+- **Deadline:** November 12, 2024
 
-To get started with this project, follow these steps:
+### **Phase 3: SIEM Analysis**
+- **Goal:** Integrate logs from victim and honeypot environments into a SIEM platform for analysis and visualization.
+- **Tools:** Wazuh, Splunk, ELK Stack, or Graylog.
+- **Deadline:** November 20, 2024
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/osamacs7/project344.git
+### **Phase 4 (Optional): Defense Strategy Proposal**
+- **Goal:** Propose and implement defense mechanisms using Caldera or custom scripts.
+---
+## Resources
+
+- [MITRE Caldera Framework](https://caldera.mitre.org)  
+- [Kali Linux](https://www.kali.org)  
+- [Metasploit Framework](https://www.metasploit.com)  
+- [MITRE ATT&CK Framework](https://attack.mitre.org)  
+- SIEM Tools:  
+  - [Wazuh](https://wazuh.com)  
+  - [Splunk](https://www.splunk.com)  
+  - [ELK Stack](https://www.elastic.co/elk-stack)  
+  - [Graylog](https://www.graylog.org)  
+---
+
+## Copyright Notice
+
+This project and its materials are the intellectual property of **King Fahd University of Petroleum and Minerals (KFUPM)** and the **ICS 344 Course Instructors**. Use of this project is strictly limited to educational purposes within ICS 344. Unauthorized use, distribution, or adaptation is prohibited.
+
+---
+
+Thank you for your participation, and good luck! 🎓
