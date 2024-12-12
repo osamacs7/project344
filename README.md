@@ -1,8 +1,6 @@
 # ICS 344: Information Security - Course Project
 
-**Project Title:** Offensive Security, Cyber Deception, and SIEM  
-**Course Instructors:** ICS 344 Faculty (Semester 241)
-** Made by Waleed A. Al-Gobi, Ph.D Students
+## Made by Waleed A. Al-Gobi, Ph.D Students
 
 ---
 
