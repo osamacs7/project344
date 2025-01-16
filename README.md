@@ -1,7 +1,8 @@
 # ICS 344: Information Security - Course Project
 
 ## Made by Dr Waleed A. Al-Gobi  Students
-
+- Osama alkarnawi
+- Ahmed aldeek
 ---
 
 ## Project Overview
@@ -56,4 +57,3 @@ This project and its materials are the intellectual property of **King Fahd Univ
 
 ---
 
-Thank you for your participation, and good luck! 🎓
