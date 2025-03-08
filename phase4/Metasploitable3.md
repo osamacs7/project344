@@ -1,5 +1,5 @@
 
-# clear step-by-step walkthrough on how to install **Metasploitable 3** as an **OVA file** in **VirtualBox**:
+# Clear step-by-step walkthrough on how to install **Metasploitable 3** as an **OVA file** in **VirtualBox**:
 
 ### Step 1: Prerequisites  
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
