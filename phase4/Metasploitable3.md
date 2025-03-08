@@ -1,7 +1,5 @@
-https://sourceforge.net/projects/metasploitable3-ub1404upgraded/files/
-credntials: vagrant:vagrant
 
-clear step-by-step walkthrough on how to install **Metasploitable 3** as an **OVA file** in **VirtualBox**:
+# clear step-by-step walkthrough on how to install **Metasploitable 3** as an **OVA file** in **VirtualBox**:
 
 ### Step 1: Prerequisites  
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
